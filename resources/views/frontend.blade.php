@@ -272,7 +272,7 @@
                                 </div>
                             </div>
                             <!--End Section Tittle  -->
-                            <form id="contact-form" action="{{route('saveConsultation')}}" method="POST">
+                            <form id="contact-form" action="{{route('saveConsultation')}}" method="get">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box user-icon mb-30">
@@ -297,7 +297,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box subject-icon mb-30">
-                                        <input type="Email" name="subject" placeholder="Email">
+                                        <input type="Email" name="email" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

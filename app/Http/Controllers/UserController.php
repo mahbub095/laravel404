@@ -17,7 +17,13 @@ class UserController extends Controller
      public function display($name){
     	return $name;
     }
-    public function saveConsultation(){
-        echo "aste parchi";
+    public function saveConsultation(Request $request){
+        //echo "aste parchi";
+        //echo $request->input('name');
+        //echo $request->input('email');
+        //echo $request->url();
+        $all = $request->all();
+        var_dump($all);
+
     }
 }
