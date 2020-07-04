@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@index');
 Route::get('frontend/contact','FrontendController@contact');
+Route::get('checkout','FrontendController@checkout')->name('checkout');
+Route::get('productsdetails','FrontendController@productsdetails')->name('productsdetails');
+
 Route::get('user','UserController@index')->name('user');
 Route::get('saveConsultation','UserController@saveConsultation')->name('saveConsultation');
 Route::get('user/{id?}','UserController@show')->where('id','[0-9]+');
