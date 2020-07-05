@@ -157,7 +157,7 @@
                                     </div>
                                 </div>
                                 <div class="shopping-cart-btns">
-                                    <button class="main-btn">View Cart</button>
+                                    <button class="main-btn"><a href="{{route('cartdetails')}}">View Cart</button>
                                     <button  class="primary-btn"><a href="{{route('checkout')}}"><i class="fa fa-check"></i> Checkout</a></button>
                                 </div>
                             </div>

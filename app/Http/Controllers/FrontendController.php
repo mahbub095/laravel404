@@ -23,4 +23,7 @@ class FrontendController extends Controller
     public function productsdetails(){
         return view('productsdetails');
     }
+    public function cartdetails(){
+        return view('cartdetails');
+    }
 }
