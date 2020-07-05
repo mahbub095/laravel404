@@ -80,8 +80,8 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="#">
-                        <img src="{{asset('frontend/img/logo.png')}}" alt="">
+                    <a class="logo" href="{{route('home')}}">
+                        <img src="{{asset('front/img/logo.png')}}" alt="">
                     </a>
                 </div>
                 <!-- /Logo -->
