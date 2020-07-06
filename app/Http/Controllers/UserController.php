@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-    	return view('frontend.user');
+    public function loginform( ){
+
+    	return view('backend.loginform');
+    }
+    public function checklogin(Request $request)
+    {
+        echo $request ->input('username');
+        echo $request ->input('password');
     }
 
     public function show($id){
