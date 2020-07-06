@@ -35,9 +35,9 @@
     *********************************************************************************************************************************************************** -->
 <div id="login-page">
     <div class="container">
-        <form class="form-login" action="{{route('checklogin')}}" method="POST">
+        <form class="form-login" action="{{route('registrationsave')}}" method="POST">
             <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
-            <h2 class="form-login-heading">sign in now
+            <h2 class="form-login-heading">Registration
                 @if(Session::has('message'))
                     {{Session::get('message')}}
                 @endif
@@ -53,8 +53,8 @@
             <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
             </span>
                 </label>
-                <button class="btn btn-theme btn-block"   type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-                <a class="btn btn-theme btn-block" href="{{route('registration')}}"  type="submit"><i class="fa fa-lock"></i>Registration</a>
+                <button class="btn btn-theme btn-block"   type="submit"><i class="fa fa-lock"></i> Create Account</button>
+
                 <hr>
                 <div class="login-social-link centered">
                     <p>or you can sign in via your social network</p>

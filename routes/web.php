@@ -27,5 +27,9 @@ Route::get('user/{name}','UserController@display');
 
 //Backend
 Route::get('/dashboard','DashboardController@index')->name('dashboard');
+
 Route::get('loginform','UserController@loginform')->name('loginform');
 Route::Post('checklogin','UserController@checklogin')->name('checklogin');
+
+Route::get('registration','UserController@registration')->name('registration');
+Route::Post('registrationsave','UserController@registrationsave')->name('registrationsave');
