@@ -8,10 +8,8 @@ class FrontendController extends Controller
 {
     public function index(){
     	return view('frontend');
-
     	//return redirect()->action('FrontendController@contact');
     	//return redirect()->route('user');
-
     }
 
     public function contact(){

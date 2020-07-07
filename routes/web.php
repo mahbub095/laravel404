@@ -33,3 +33,8 @@ Route::Post('checklogin','UserController@checklogin')->name('checklogin');
 
 Route::get('registration','UserController@registration')->name('registration');
 Route::Post('registrationsave','UserController@registrationsave')->name('registrationsave');
+Route::get('logout','UserController@logout')->name('logout');
+
+//role
+Route::get('roleform','UserController@roleform')->name('roleform');
+Route::get('showrole','UserController@showrole')->name('showrole');
