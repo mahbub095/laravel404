@@ -284,6 +284,30 @@
                     </ul>
                 </li>
 
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-desktop"></i>
+                        <span>Cat</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{route('catform')}}">Create</a></li>
+                        <li><a href="{{route('showallcat')}}">Show all</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-desktop"></i>
+                        <span>Product</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{route('proform')}}">Create</a></li>
+                        <li><a href="{{route('showallpro')}}">Show all</a></li>
+
+                    </ul>
+                </li>
+
 
             </ul>
             <!-- sidebar menu end-->
