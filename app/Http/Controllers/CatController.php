@@ -14,7 +14,8 @@ class CatController extends Controller
 
     public function showallcat()
     {
-        return view('backend.showallcat');
+        $categories = DB::select('select * from category');
+        return view('backend.showallcat',['categories'=>$categories]);
     }
 
 
@@ -25,7 +26,14 @@ class CatController extends Controller
         Session::flash('message', 'Save Done');
         DB::insert('insert into category(name,code,userid) values (?,?,?)', [$name, $code,1]);
         Session::flash('message', 'Successfully Save');
-        return redirect()->action('CatController@catform');
+        return redirect()->action('CatController@showallcat');
+    }
+
+    public function cateedit(){
+
+    }
+    public function catdelete(){
+
     }
 
     public function roleform(){

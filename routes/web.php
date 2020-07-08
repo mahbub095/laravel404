@@ -43,6 +43,8 @@ Route::get('showrole', 'UserController@showrole')->name('showrole');
 Route::get('catform', 'CatController@catform')->name('catform');
 Route::get('showallcat', 'CatController@showallcat')->name('showallcat');
 Route::post('catsave', 'CatController@catsave')->name('catsave');
+Route::get('cateedit/{id}','CatController@cateedit')->name('cateedit');
+Route::get('catdelete/{id}','CatController@catdelete')->name('catdelete');
 
 //Product Area
 Route::get('proform', 'ProductController@proform')->name('proform');

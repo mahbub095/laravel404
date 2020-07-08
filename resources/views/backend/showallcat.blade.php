@@ -3,7 +3,13 @@
 @section('main')
 
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
+            <h3><i class="fa fa-angle-right"></i> Advanced Table Example
+ {{--Session message show from controller  catsave method--}}
+                @if(Session::has('message'))
+                    {{Session::get('message')}}
+                @endif
+
+            </h3>
             <div class="row mb">
                 <!-- page start-->
                 <div class="content-panel">
@@ -11,28 +17,33 @@
                         <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                             <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th class="hidden-phone">Platform(s)</th>
-                                <th class="hidden-phone">Engine version</th>
-                                <th class="hidden-phone">CSS grade</th>
+                                <th>SL No</th>
+                                <th>Role Name</th>
+                                <th> Role Code</th>
+                                <th> Action</th>
+
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $serial =0;
+                                foreach ($categories as $category){
+                                    $serial+=1;
+
+
+                            ?>
+
+
                             <tr class="gradeX">
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td class="hidden-phone">Win 95+</td>
-                                <td class="center hidden-phone">4</td>
-                                <td class="center hidden-phone">X</td>
+                                <th><?php echo $serial;?></th>
+                                <th><?php echo $category ->name;?> </th>
+                                <th> <?php echo $category ->code;?> </th>
+                                <th> <a href="{{url('cateedit')}}/{{$category->id}}"<?php echo $category->id;?> > Edit </a> || <a href="{{url('catdelete')}}/{{$category->id}}" > Delete </a> </th>
                             </tr>
-                            <tr class="gradeC">
-                                <td>Trident</td>
-                                <td>Internet Explorer 5.0</td>
-                                <td class="hidden-phone">Win 95+</td>
-                                <td class="center hidden-phone">5</td>
-                                <td class="center hidden-phone">C</td>
-                            </tr>
+                            <?php
+
+                         }   ?>
+
 
 
 
