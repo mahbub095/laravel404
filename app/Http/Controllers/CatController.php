@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 Use DB;
+
 class CatController extends Controller
 {
     public function catform()
@@ -15,7 +16,7 @@ class CatController extends Controller
     public function showallcat()
     {
         $categories = DB::select('select * from category');
-        return view('backend.showallcat',['categories'=>$categories]);
+        return view('backend.showallcat', ['categories' => $categories]);
     }
 
 
@@ -24,34 +25,71 @@ class CatController extends Controller
         $name = $request->input('name');
         $code = $request->input('code');
         Session::flash('message', 'Save Done');
-        DB::insert('insert into category(name,code,userid) values (?,?,?)', [$name, $code,1]);
+
+        DB::insert('insert into category(name,code,userid) values (?,?,?)', [$name, $code, 1]);
         Session::flash('message', 'Successfully Save');
         return redirect()->action('CatController@showallcat');
     }
 
-    public function cateedit(){
+    public function cateedit($id)
+    {
+        $category = DB::select('select * from category where id = ?', [$id]);
+       //Session::flash('message','SuccessFully U');
+       return view('backend.editcat',['category'=>$category]);
+        
+    }
+
+/*    public function catupdate(Request $request)
+    {
+
+         $name = $request->input('name');
+        $code = $request->input('code');
+        Session::flash('message', 'Update Done');
+        $data=array('name'=>$name,"code"=>$code);
+        DB::table('category')->update($data);
+       // DB::table('category')->whereIn('id', $id)->update($request->all());
+        
+     ]);
+
+        return View('backend.editcat');
+        //return redirect()->action('CatController@showallcat',['category'=>$category]);
+    }*/
+
+
+    public function catupdate(Request $request, $id){
+       $name = $request->input('name');
+       $code = $request->input('code');
+       
+       $query = DB::update('update category set name = ?,code = ? where id = ?',[$name, $code, $id]);
+       Session::flash('message', 'Category Updated Successfully');
+       return redirect()->action('CatController@showallcat'); 
+     }
+
+    public function catdelete($id)
+    {
+        DB::select('delete from  category where id =?', [$id]);
+        Session::flash('message', 'Successfully Delete');
+        return redirect()->action('CatController@showallcat');
 
     }
-    public function catdelete(){
 
-    }
+    public function roleform()
+    {
 
-    public function roleform(){
-
-        if(Session::has('username')){
+        if (Session::has('username')) {
             return view('backend.role');
-        }
-        else{
+        } else {
             Session::flash('message', 'Login First');
             return redirect()->route('loginform');
         }
     }
-    public function showrole(){
 
-        if(Session::has('username')){
+    public function showrole()
+    {
+
+        if (Session::has('username')) {
             return view('backend.showrole');
-        }
-        else{
+        } else {
             Session::flash('message', 'Login First');
             return redirect()->route('loginform');
         }

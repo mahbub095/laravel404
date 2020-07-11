@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d9d3349-717f-4244-a482-eddcd92d6564" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/showallcat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/showallcat.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +160,9 @@
       <workItem from="1593962683744" duration="2444000" />
       <workItem from="1594053419208" duration="9298000" />
       <workItem from="1594134104120" duration="10134000" />
-      <workItem from="1594210189210" duration="1610000" />
+      <workItem from="1594210189210" duration="3539000" />
+      <workItem from="1594223714451" duration="12162000" />
+      <workItem from="1594461674098" duration="14000" />
     </task>
     <servers />
   </component>
@@ -167,6 +170,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#SQL_Dialects" timestamp="1594231804037">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1594231804037" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594141687605">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -175,10 +182,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="367" y="19" width="645" height="690" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1594144100383" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594210189527">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594466532852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594210189527" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594466532852" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1594234124907">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594234124907" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
