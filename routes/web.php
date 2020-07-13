@@ -46,7 +46,16 @@ Route::post('catsave', 'CatController@catsave')->name('catsave');
 Route::get('cateedit/{id}','CatController@cateedit')->name('cateedit');
 //Route::post('edit/{id}','CatController@edit');
 Route::get('catdelete/{id}','CatController@catdelete')->name('catdelete');
+
 Route::post('catupdate/{id}','CatController@catupdate')->name('catupdate');
 //Product Area
 Route::get('proform', 'ProductController@proform')->name('proform');
 Route::get('showallpro', 'ProductController@showallpro')->name('showallpro');
+Route::post('productsave','ProductController@save')->name('productsave');
+Route::get('prodelete/{id}','ProductController@prodelete')->name('prodelete');
+
+//
+
+Route::get('add-to-cart/{id}', 'ProductController@addToCart');
+Route::patch('update-cart', 'ProductController@update');
+Route::delete('remove-from-cart', 'ProductController@remove');

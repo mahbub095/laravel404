@@ -11,29 +11,37 @@
                         <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                             <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th class="hidden-phone">Platform(s)</th>
-                                <th class="hidden-phone">Engine version</th>
-                                <th class="hidden-phone">CSS grade</th>
+
+                                <th>Serial</th>
+                                <th class="hidden-phone">Product Name</th>
+                                <th class="hidden-phone">Buy price</th>
+                                <th class="hidden-phone">Tag</th>
+                                <th class="hidden-phone">Product Photo</th>
+                                <th class="hidden-phone">Action</th>
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            $serial =0;
+                            foreach ($products as $product){
+                                $serial+=1;
+
+
+                                ?>
                             <tr class="gradeX">
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td class="hidden-phone">Win 95+</td>
-                                <td class="center hidden-phone">4</td>
-                                <td class="center hidden-phone">X</td>
-                            </tr>
-                            <tr class="gradeC">
-                                <td>Trident</td>
-                                <td>Internet Explorer 5.0</td>
-                                <td class="hidden-phone">Win 95+</td>
-                                <td class="center hidden-phone">5</td>
-                                <td class="center hidden-phone">C</td>
+                                <th><?php echo $serial;?></th>
+                                <th><?php echo $product ->title;?> </th>
+                                <th> <?php echo $product ->buy_price;?> </th>
+                                <th> <?php echo $product ->tag;?> </th>
+ 
+                               <th>  <img src="{{$product->feature_image}}"  style="height: 60px; width: 60px;"/>  </th>
+                                <th> <a href=" "  > Edit </a> || <a href=" {{url('prodelete')}}/{{$product->id}}" > Delete </a> </th>
+
                             </tr>
 
+                            <?php
+
+                            }   ?>
 
 
                             </tbody>

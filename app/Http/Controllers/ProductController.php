@@ -4,20 +4,71 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class ProductController extends Controller
 {
 
-    public function proform()
-    {
-        return view('backend.product');
+    public function proform (){
+
+
+        $categories = DB::select('select * from category');
+        return View('backend.product',['categories'=>$categories]);
     }
 
-    public function showallpro()
-    {
-        return view('backend.showallpro');
+
+    public function showallpro (){
+        $products = DB::select('select * from product');
+        return View('backend.showallpro',['products'=>$products]);
     }
 
+    public function save(Request $request){
+
+
+        $category_id=$request->category_id;
+
+        $buy_price=$request->buy_price;
+        $title=$request->title;
+        $tags=$request->tag;
+        $regular_price=$request->regular_price;
+        $flate_price=$request->flate_price;
+        $rating=$request->rating;
+        $shortdes=$request->shortdes;
+        $tag=$request->tag;
+        $product_info=$request->product_info;
+        $product_position=$request->product_position;
+
+        DB::insert('insert into product(title,regular_price,flate_price,shortdes,product_info,cat_id,buy_price,tag,product_position)value(?,?,?,?,?,?,?,?,?)',[$title,$regular_price,$flate_price,$shortdes,$product_info,$category_id,$buy_price,$tags,$product_position]);
+        $count =  count($request->images);
+        $product_last_id = DB::getPdo()->lastInsertId();
+
+        for ($i = 0; $i < count($request->images); $i++) {
+            $images = $request->images;
+            $image = $images[$i];
+            $name = time() . $i . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('product-image');
+            $image->move($destinationPath, $name);
+            $image_url = 'product-image/' . $name;
+            DB::insert('insert into product_image(product_id,image_url)value(?,?)',[$product_last_id,$image_url]);
+
+
+        }
+
+        DB::table('product')
+            ->where('id', $product_last_id)
+            ->update(['feature_image' => $image_url]);
+
+        Session::flash('message',' added successfully!');
+        return redirect()->action('ProductController@proform');
+
+    }
+    public function prodelete($id)
+    {
+        DB::select('delete from  product where id =?', [$id]);
+        Session::flash('message', 'Successfully Delete');
+        return redirect()->action('ProductController@showallpro');
+
+    }
     public function roleform()
     {
 
@@ -39,6 +90,108 @@ class ProductController extends Controller
             return redirect()->route('loginform');
         }
     }
+
+    public function cart(){
+        if(session('cart')){
+            $category=DB::select('select * from category');
+            return view('ecommerce.admin.cart',['categories'=>$category]);
+
+        }
+        else{
+
+            return redirect()->action('CategoryConteroller@showproductbycat');
+
+        }
+
+    }
+
+   /* public function addToCart($id)
+    {
+        $product =DB::table('product')->where('id', $id)->first();
+
+        if(!$product) {
+
+            abort(404);
+
+        }
+
+        $cart = session()->get('cart');
+
+        // if cart is empty then this the first product
+        if(!$cart) {
+
+            $cart = [
+                $id => [
+                    "id" =>$product->id,
+                    "title" =>$product->title,
+                    "quantity" => 1,
+                    "regular_price" => $product->regular_price,
+                    "flate_price" => $product->flate_price,
+                    "photo" => $product->feature_image
+                ]
+            ];
+
+            session()->put('cart', $cart);
+
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+
+        // if cart not empty then check if this product exist then increment quantity
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+            session()->put('cart', $cart);
+
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+
+        }
+
+        // if item not exist in cart then add to cart with quantity = 1
+        $cart[$id] = [
+            "id" =>$product->id,
+            "title" =>$product->title,
+            "quantity" => 1,
+            "regular_price" => $product->regular_price,
+            "flate_price" => $product->flate_price,
+            "photo" => $product->feature_image
+        ];
+
+        session()->put('cart', $cart);
+
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
+
+    public function update(Request $request)
+    {
+        if($request->id and $request->quantity)
+        {
+            $cart = session()->get('cart');
+
+            $cart[$request->id]["quantity"] = $request->quantity;
+
+            session()->put('cart', $cart);
+
+            session()->flash('success', 'Cart updated successfully');
+        }
+    }
+
+    public function remove(Request $request)
+    {
+        if($request->id) {
+
+            $cart = session()->get('cart');
+
+            if(isset($cart[$request->id])) {
+
+                unset($cart[$request->id]);
+
+                session()->put('cart', $cart);
+            }
+
+            session()->flash('success', 'Product removed successfully');
+        }
+    }*/
+
+
 
     public function registration()
     {

@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d9d3349-717f-4244-a482-eddcd92d6564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/showallpro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/showallpro.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,6 +167,9 @@
       <workItem from="1594210189210" duration="3539000" />
       <workItem from="1594223714451" duration="12162000" />
       <workItem from="1594461674098" duration="14000" />
+      <workItem from="1594466532671" duration="19925000" />
+      <workItem from="1594574682480" duration="5358000" />
+      <workItem from="1594601442416" duration="1960000" />
     </task>
     <servers />
   </component>
@@ -182,10 +189,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="367" y="19" width="645" height="690" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1594144100383" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594466532852">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594601507028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594466532852" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594601507028" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1594234124907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -198,6 +205,21 @@
           <url>file://$PROJECT_DIR$/resources/views/layouts/backend.blade.php</url>
           <line>321</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
+          <line>234</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
+          <line>258</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
+          <line>906</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
