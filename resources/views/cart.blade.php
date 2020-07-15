@@ -590,7 +590,9 @@
                                             </td>
                                             <td class="price text-center"><strong>${{$details['regular_price']}}</strong></td>
                                             <td class="qty text-center" data-th="Quantity">
-                                                <input class="input" type="number" value="{{ $details['quantity'] }}">
+                                                {{--update pop up--}}
+                                                <input type="number" value="{{ $details['quantity'] }}" class="input quantity" />
+                                                {{--<input class="input" type="number" value="{{ $details['quantity'] }}">--}}
                                             </td>
                                             <td class="total text-center">
                                                 <strong class="primary-color">
@@ -598,6 +600,7 @@
                                                 </strong>
                                             </td>
                                             <td class="text-right" data-th="">
+                                            <td class="qty text-center" data-th="Quantity">
                                                 <button class="main-btn icon-btn update-cart" data-id="{{ $id }}">
                                                     <i class="fa fa-refresh"></i>
                                                 </button>
@@ -761,6 +764,7 @@
 	<script src="{{asset('front/js/jquery.zoom.min.js')}}"></script>
 	<script src="{{asset('front/js/main.js')}}"></script>
     <script type="text/javascript">
+
 
         $(".update-cart").click(function (e) {
             e.preventDefault();
