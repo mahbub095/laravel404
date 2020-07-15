@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/editcat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/showallpro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/showallpro.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cartdetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +166,10 @@
       <workItem from="1594461674098" duration="14000" />
       <workItem from="1594466532671" duration="19925000" />
       <workItem from="1594574682480" duration="5358000" />
-      <workItem from="1594601442416" duration="1960000" />
+      <workItem from="1594601442416" duration="2136000" />
+      <workItem from="1594729303958" duration="4849000" />
+      <workItem from="1594745430887" duration="10178000" />
+      <workItem from="1594823270248" duration="6771000" />
     </task>
     <servers />
   </component>
@@ -189,10 +189,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="367" y="19" width="645" height="690" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1594144100383" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594601507028">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594823269547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594601507028" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594823269547" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1594234124907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -208,17 +208,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
-          <line>234</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
-          <line>258</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/frontend.blade.php</url>
-          <line>906</line>
+          <line>723</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

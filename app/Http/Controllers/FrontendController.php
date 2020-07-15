@@ -19,6 +19,8 @@ class FrontendController extends Controller
 
     }
 
+
+
     public function contact(){
     	return view('frontend.contact');
     }
@@ -29,6 +31,6 @@ class FrontendController extends Controller
         return view('productsdetails');
     }
     public function cartdetails(){
-        return view('cartdetails');
+        return view('cart');
     }
 }

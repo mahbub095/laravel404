@@ -36,7 +36,7 @@ class ProductController extends Controller
         $shortdes=$request->shortdes;
         $tag=$request->tag;
         $product_info=$request->product_info;
-        $product_position=$request->product_position;
+        $product_position=$request->product_positionProductController;
 
         DB::insert('insert into product(title,regular_price,flate_price,shortdes,product_info,cat_id,buy_price,tag,product_position)value(?,?,?,?,?,?,?,?,?)',[$title,$regular_price,$flate_price,$shortdes,$product_info,$category_id,$buy_price,$tags,$product_position]);
         $count =  count($request->images);
@@ -105,7 +105,13 @@ class ProductController extends Controller
 
     }
 
-   /* public function addToCart($id)
+    public function cartdetails(){
+        return view('cart');
+    }
+
+
+
+   public function addToCart($id)
     {
         $product =DB::table('product')->where('id', $id)->first();
 
@@ -155,11 +161,12 @@ class ProductController extends Controller
             "photo" => $product->feature_image
         ];
 
+
         session()->put('cart', $cart);
 
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
-
+/*
     public function update(Request $request)
     {
         if($request->id and $request->quantity)

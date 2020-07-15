@@ -18,7 +18,7 @@ Route::get('/', 'FrontendController@index')->name('home');
 Route::get('frontend/contact', 'FrontendController@contact');
 Route::get('checkout', 'FrontendController@checkout')->name('checkout');
 Route::get('productsdetails', 'FrontendController@productsdetails')->name('productsdetails');
-Route::get('cartdetails', 'FrontendController@cartdetails')->name('cartdetails');
+Route::get('cart', 'ProductController@cartdetails')->name('cart');
 
 Route::get('user', 'UserController@index')->name('user');
 Route::get('saveConsultation', 'UserController@saveConsultation')->name('saveConsultation');

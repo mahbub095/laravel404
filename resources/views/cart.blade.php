@@ -567,7 +567,7 @@
 							</div>
 							<table class="shopping-cart-table table">
 								<thead>
-									<tr>
+                               	<tr>
 										<th>Product</th>
 										<th></th>
 										<th class="text-center">Price</th>
@@ -577,54 +577,45 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td class="thumb"><img src="{{asset('front/img/thumb-product01.jpg')}}" alt=""></td>
-										<td class="details">
-											<a href="#">Product Name Goes Here</a>
-											<ul>
-												<li><span>Size: XL</span></li>
-												<li><span>Color: Camelot</span></li>
-											</ul>
-										</td>
-										<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small>$40.00</small></del></td>
-										<td class="qty text-center"><input class="input" type="number" value="1"></td>
-										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
-									</tr>
-									<tr>
-										<td class="thumb"><img src="{{asset('front/img/thumb-product01.jpg')}}" alt=""></td>
-										<td class="details">
-											<a href="#">Product Name Goes Here</a>
-											<ul>
-												<li><span>Size: XL</span></li>
-												<li><span>Color: Camelot</span></li>
-											</ul>
-										</td>
-										<td class="price text-center"><strong>$32.50</strong></td>
-										<td class="qty text-center"><input class="input" type="number" value="1"></td>
-										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
-									</tr>
-									<tr>
-										<td class="thumb"><img src="{{asset('front/img/thumb-product01.jpg')}}" alt=""></td>
-										<td class="details">
-											<a href="#">Product Name Goes Here</a>
-											<ul>
-												<li><span>Size: XL</span></li>
-												<li><span>Color: Camelot</span></li>
-											</ul>
-										</td>
-										<td class="price text-center"><strong>$32.50</strong></td>
-										<td class="qty text-center"><input class="input" type="number" value="1"></td>
-										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
-									</tr>
+
+                                <?php $total = 0 ?>
+                                @if(session('cart'))
+                                    @foreach(session('cart') as $id => $details)
+
+
+                                        <tr>
+                                            <td class="thumb"><img src="{{$details['photo']}}" alt=""></td>
+                                            <td class="details">
+                                                <a href="#">{{$details['title']}}</a>
+                                            </td>
+                                            <td class="price text-center"><strong>${{$details['regular_price']}}</strong></td>
+                                            <td class="qty text-center" data-th="Quantity">
+                                                <input class="input" type="number" value="{{ $details['quantity'] }}">
+                                            </td>
+                                            <td class="total text-center">
+                                                <strong class="primary-color">
+                                                    $
+                                                    @php
+                                                        echo  $details ['regular_price'] * $details['quantity']
+                                                    @endphp
+                                                </strong>
+                                            </td>
+                                            <td class="text-right" data-th="">
+                                                <button class="main-btn icon-btn update-cart" data-id="{{ $id }}">
+                                                    <i class="fa fa-refresh"></i>
+                                                </button>
+                                                <button class="main-btn icon-btn"><i class="fa fa-close"></i></button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+
 								</tbody>
 								<tfoot>
 									<tr>
 										<th class="empty" colspan="3"></th>
-										<th>SUBTOTAL</th>
-										<th colspan="2" class="sub-total">$97.50</th>
+										{{--<th>SUBTOTAL</th>
+									     <th colspan="2" class="sub-total">$97.50</th>--}}
 									</tr>
 									<tr>
 										<th class="empty" colspan="3"></th>
@@ -634,7 +625,7 @@
 									<tr>
 										<th class="empty" colspan="3"></th>
 										<th>TOTAL</th>
-										<th colspan="2" class="total">$97.50</th>
+										<th colspan="2" class="total">${{ $total }}</th>
 									</tr>
 								</tfoot>
 							</table>
