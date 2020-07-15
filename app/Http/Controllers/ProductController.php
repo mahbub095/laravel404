@@ -166,7 +166,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
-/*
+
     public function update(Request $request)
     {
         if($request->id and $request->quantity)
@@ -196,7 +196,7 @@ class ProductController extends Controller
 
             session()->flash('success', 'Product removed successfully');
         }
-    }*/
+    }
 
 
 

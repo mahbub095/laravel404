@@ -573,7 +573,7 @@
 										<th class="text-center">Price</th>
 										<th class="text-center">Quantity</th>
 										<th class="text-center">Total</th>
-										<th class="text-right"></th>
+										<th class="text-right">Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -594,17 +594,14 @@
                                             </td>
                                             <td class="total text-center">
                                                 <strong class="primary-color">
-                                                    $
-                                                    @php
-                                                        echo  $details ['regular_price'] * $details['quantity']
-                                                    @endphp
+                                                    ${{ $details['regular_price'] * $details['quantity'] }}
                                                 </strong>
                                             </td>
                                             <td class="text-right" data-th="">
                                                 <button class="main-btn icon-btn update-cart" data-id="{{ $id }}">
                                                     <i class="fa fa-refresh"></i>
                                                 </button>
-                                                <button class="main-btn icon-btn"><i class="fa fa-close"></i></button>
+                                                <button class="main-btn icon-btn remove-from-cart" data-id="{{ $id }}"><i class="fa fa-close"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -612,11 +609,19 @@
 
 								</tbody>
 								<tfoot>
-									<tr>
+									{{--<tr>
 										<th class="empty" colspan="3"></th>
-										{{--<th>SUBTOTAL</th>
-									     <th colspan="2" class="sub-total">$97.50</th>--}}
-									</tr>
+										<th>SUBTOTAL</th>
+									     <th colspan="2" class="sub-total">
+                                             <?php $total = 0 ?>
+                                             @if(session('cart'))
+                                                 @foreach(session('cart') as $id => $details)
+                                                     <?php $total += $details['regular_price'] * $details['quantity'] ?>
+                                                 @endforeach
+                                             @endif
+                                             <?php echo $total; ?>
+                                         </th>
+									</tr>--}}
 									<tr>
 										<th class="empty" colspan="3"></th>
 										<th>SHIPING</th>
@@ -625,7 +630,14 @@
 									<tr>
 										<th class="empty" colspan="3"></th>
 										<th>TOTAL</th>
-										<th colspan="2" class="total">${{ $total }}</th>
+										<th colspan="2" class="total">
+                                            <?php $total = 0 ?>
+                                            @if(session('cart'))
+                                                @foreach(session('cart') as $id => $details)
+                                                    <?php $total += $details['regular_price'] * $details['quantity'] ?>
+                                                @endforeach
+                                            @endif
+                                            <?php echo $total; ?></th>
 									</tr>
 								</tfoot>
 							</table>
@@ -748,6 +760,43 @@
 	<script src="{{asset('front/js/nouislider.min.js')}}"></script>
 	<script src="{{asset('front/js/jquery.zoom.min.js')}}"></script>
 	<script src="{{asset('front/js/main.js')}}"></script>
+    <script type="text/javascript">
+
+        $(".update-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            alert( ele.parents("tr").find(".quantity").val());
+
+            $.ajax({
+                url: '{{ url('update-cart') }}',
+                method: "patch",
+                data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val() },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+
+    </script>
 
 </body>
 

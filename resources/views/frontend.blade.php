@@ -134,7 +134,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <div class="header-btns-icon">
                                 <i class="fa fa-shopping-cart"></i>
+                                @if(session('cart')!==null)
                                 <span class="qty">{{ count(session('cart')) }}</span>
+                                @endif
                             </div>
                             <strong class="text-uppercase">My Cart:</strong>
                             <br>
@@ -163,7 +165,8 @@
                                             </h3>
                                             <h2 class="product-name"><a href="#">{{ $details['title'] }}</a></h2>
                                         </div>
-                                        <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                      {{--  <button class="main-btn icon-btn remove-from-cart" data-id="{{ $id }}"><i class="fa fa-close"></i></button>
+                                        --}}<button class="cancel-btn remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash"></i></button>
                                     </div>
                                         @endforeach
                                     @endif
@@ -1060,7 +1063,43 @@
 <script src="{{asset('front/js/nouislider.min.js')}}"></script>
 <script src="{{asset('front/js/jquery.zoom.min.js')}}"></script>
 <script src="{{asset('front/js/main.js')}}"></script>
+<script type="text/javascript">
 
+    $(".update-cart").click(function (e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        alert( ele.parents("tr").find(".quantity").val());
+
+        $.ajax({
+            url: '{{ url('update-cart') }}',
+            method: "patch",
+            data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val() },
+            success: function (response) {
+                window.location.reload();
+            }
+        });
+    });
+
+    $(".remove-from-cart").click(function (e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        if(confirm("Are you sure")) {
+            $.ajax({
+                url: '{{ url('remove-from-cart') }}',
+                method: "DELETE",
+                data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
+
+</script>
 </body>
 
 </html>
