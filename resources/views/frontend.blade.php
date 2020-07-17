@@ -141,10 +141,18 @@
                             <strong class="text-uppercase">My Cart:</strong>
                             <br>
                             <span>
-                                <?php $total = 0 ?>
+                              {{--  <?php $total = 0 ?>
                                     @foreach(session('cart') as $id => $details)
                                         <?php $total += $details['regular_price'] * $details['quantity'] ?>
                                     @endforeach
+                                    <?php echo $total; ?>--}}
+
+                                           <?php $total = 0 ?>
+                                    @if(session('cart'))
+                                        @foreach(session('cart') as $id => $details)
+                                            <?php $total += $details['regular_price'] * $details['quantity'] ?>
+                                        @endforeach
+                                    @endif
                                     <?php echo $total; ?>
 
                            </span>
@@ -928,7 +936,8 @@
                 <div class="product product-single">
 
                     <div class="product-thumb">
-                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
+
+                        <button class="main-btn quick-view" > <a href="{{url('productsdetails')}}/{{$pro->id}}"<?php echo $pro->id;?> >      <i class="fa fa-search-plus">  </i> </a>  Quick view</button>
                         <img src="<?php echo $pro->feature_image; ?>" alt="">
                     </div>
                     <div class="product-body">
@@ -944,7 +953,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><a href="{{ url('add-to-cart/'.$pro->id) }}"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            {{--<button class="primary-btn add-to-cart"> <i class="fa fa-shopping-cart" > </i> Add to Cart</button>--}}
+
                         </div>
                     </div>
                 </div>

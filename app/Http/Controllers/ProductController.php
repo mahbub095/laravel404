@@ -22,6 +22,16 @@ class ProductController extends Controller
         return View('backend.showallpro',['products'=>$products]);
     }
 
+    public function productsdetails($id)
+    {
+      /*  $pro=DB::table('product')
+            ->where('id',$id)
+            ->first();*/
+        $pro = DB::select('select * from product where id = ?', [$id]);
+        return view('productsdetails', compact('pro'));
+     //   var_dump($pro);
+    }
+
     public function save(Request $request){
 
 

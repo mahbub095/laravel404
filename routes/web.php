@@ -53,7 +53,7 @@ Route::get('proform', 'ProductController@proform')->name('proform');
 Route::get('showallpro', 'ProductController@showallpro')->name('showallpro');
 Route::post('productsave','ProductController@save')->name('productsave');
 Route::get('prodelete/{id}','ProductController@prodelete')->name('prodelete');
-
+Route::get('productsdetails/{id}', 'ProductController@productsdetails')->name('productsdetails');
 //
 
 Route::get('add-to-cart/{id}', 'ProductController@addToCart');
