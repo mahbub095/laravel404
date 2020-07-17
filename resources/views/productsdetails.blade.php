@@ -562,12 +562,15 @@
             <div class="row">
                 <!--  Product Details -->
                 <div class="product product-details clearfix">
+                    <?php
+                    foreach($product as $pro){
+                    ?>
                     <div class="col-md-6">
                         <div id="product-main-view">
                             <div class="product-view">
-                                <img src="{{asset('front/img/main-product01.jpg')}}" alt="">
+                                <img src="<?php echo $pro->feature_image; ?>" alt="">
                             </div>
-                            <div class="product-view">
+                       {{--     <div class="product-view">
                                 <img src="{{asset('front/img/main-product02.jpg')}}" alt="">
                             </div>
                             <div class="product-view">
@@ -575,7 +578,7 @@
                             </div>
                             <div class="product-view">
                                 <img src="{{asset('front/img/main-product04.jpg')}}" alt="">
-                            </div>
+                            </div>--}}
                         </div>
                         <div id="product-view">
                             <div class="product-view">
@@ -592,13 +595,18 @@
                             </div>
                         </div>
                     </div>
+                        <?php } ?>
+
+                    <?php
+                    foreach($product as $pro){
+                    ?>
                     <div class="col-md-6">
                         <div class="product-body">
                             <div class="product-label">
                                 <span>New</span>
                                 <span class="sale">-20%</span>
                             </div>
-                            <h2 class="product-name">Product Name Goes Here</h2>
+                            <h2 class="product-name"><?php echo $pro->regular_price?></h2>
                             <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
                             <div>
                                 <div class="product-rating">
@@ -612,8 +620,7 @@
                             </div>
                             <p><strong>Availability:</strong> In Stock</p>
                             <p><strong>Brand:</strong> E-SHOP</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><?php echo $pro->product_info?></p>
                             <div class="product-options">
                                 <ul class="size-option">
                                     <li><span class="text-uppercase">Size:</span></li>
@@ -759,7 +766,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <?php } ?>
                 </div>
                 <!-- /Product Details -->
             </div>

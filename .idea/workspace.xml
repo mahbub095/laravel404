@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d9d3349-717f-4244-a482-eddcd92d6564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/productsdetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/productsdetails.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +167,7 @@
       <workItem from="1594729303958" duration="4849000" />
       <workItem from="1594745430887" duration="10178000" />
       <workItem from="1594823270248" duration="13886000" />
-      <workItem from="1594990641958" duration="10115000" />
+      <workItem from="1594990641958" duration="14341000" />
     </task>
     <servers />
   </component>
@@ -191,10 +191,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594990724929" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1594234124907">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1595017573894">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594234124907" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1595017573894" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -203,6 +203,16 @@
           <url>file://$PROJECT_DIR$/resources/views/layouts/backend.blade.php</url>
           <line>321</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/productsdetails.blade.php</url>
+          <line>653</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/productsdetails.blade.php</url>
+          <line>567</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

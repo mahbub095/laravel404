@@ -28,7 +28,7 @@ class ProductController extends Controller
             ->where('id',$id)
             ->first();*/
         $pro = DB::select('select * from product where id = ?', [$id]);
-        return view('productsdetails', compact('pro'));
+        return view('productsdetails', ['product'=>$pro]);
      //   var_dump($pro);
     }
 
